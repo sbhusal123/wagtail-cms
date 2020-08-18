@@ -39,14 +39,14 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="/blog">Blog</a>
               </li>
-<!--              <li class="nav-item">-->
-<!--                <a class="nav-link" href="#">Pricing</a>-->
-<!--              </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
 <!--              <li class="nav-item">-->
 <!--                <a class="nav-link" href="#">About</a>-->
 <!--              </li>-->
@@ -81,5 +81,31 @@
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
+
+        <div class="container">
+            {% if settings.site_settings.SocialMediaSettings.facebook %}
+                <a href="{{settings.site_settings.SocialMediaSettings.facebook}}">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            {% endif %}
+
+            {% if settings.site_settings.SocialMediaSettings.twitter %}
+                <a href="{{settings.site_settings.SocialMediaSettings.twitter}}">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            {% endif %}
+
+            {% if settings.site_settings.SocialMediaSettings.youtube %}
+                <a href="{{settings.site_settings.SocialMediaSettings.youtube}}">
+                    <i class="fa fa-youtube"></i>
+                </a>
+            {% endif %}
+
+                <a href="https://www.github.com/sbhusal123">
+                    <i class="fa fa-github"></i>
+                </a>
+            <br>
+            <br>
+        </div>
     </body>
 </html>
